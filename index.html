@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram</title>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/flexboxgrid.min.css">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
@@ -39,19 +40,79 @@
           <header class="posts__header">
             <ul class="posts__navig">
               <li class="posts__item posts__item--active"><span class="posts__item-icon"></span> POSTS</li>
-              <li class="posts__item"><span class="posts__item-icon"></span> VIDeOS</li>
-              <li class="posts__item"><span class="posts__item-icon"></span> TAggED</li>
+              <li class="posts__item"><span class="posts__item-icon"></span>VIDEOS</li>
+              <li class="posts__item"><span class="posts__item-icon"></span>TAGGED</li>
             </ul>
           </header>
           <div class="posts__hero">
             <ul class="posts__list">
-              <li class="posts__item post">
-                <div class="post__inner">
-                  
-                </div>
-              </li>
+              <template id="postTemplate">
+                <li class="posts__post post">
+                  <img class="post__img" src="" alt="post">
+                  <div class="post__inner">
+                    <p class="post__likes post__content"><i class='bx bxs-heart'></i><span class="post__likes-count post__counts"></span></p>
+                    <p class="post__comments post__content"><i class='bx bxs-message-rounded'></i><span class="post__comm-count post__counts"></span></p>
+                  </div>
+                </li>
+              </template>
             </ul>
           </div>
+          <template id="modalPost">
+            <div class="posts__modal fullpost post--active">
+              <button class="fullpost__exit"><i class='bx bx-x'></i></button>
+              <div class="fullpost__inner">
+                <div class="fullpost__content">
+                  
+                </div>
+    
+                <div class="fullpost__box info">
+                  <header class="info__header">
+                    <div class="info__header-left">
+                      <a href="#" class="info__link">
+                        <img class="info__ava" src="" alt="ava">
+                        <p class="info__user"></p>
+                      </a>
+                      <button class="info__is-followed"></button>
+                    </div>
+                    <div class="info__header-right">
+                      <button class="info__menu-btn"><i class='bx bx-dots-horizontal-rounded' ></i></button>
+                    </div>
+                  </header>
+                  <div class="info__hero">
+                    <div class="info__comments comms">
+                      <div class="comms__authors">
+                        <a href="#" class="comms__author">
+                          <img class="comms__author-ava" src="" alt="ava">
+                          <p class="comms__author-usern"></p>
+                        </a>
+                        <p class="comms__author-comment"></p>
+                      </div>
+                    </div>
+                    <div class="info__btns">
+                      <div class="info__main-btns">
+                        <button class="info__btn btn-like"></button>
+                        <button class="info__btn btn-comment"><i class='bx bx-message-rounded'></i></button>
+                        <button class="info__btn btn-share"><i class='bx bxl-telegram' ></i>  </button>
+                      </div>
+                      <button class="info__btn btn-save"><i class='bx bx-bookmark' ></i></button>
+                    </div>
+                    <div class="info__about">
+                      <a class="info__likes"><span class="info__likes-count"></span> likes</a>
+                      <p class="info__time"></p>
+                    </div>
+                    <div class="info__com">
+                      <button class="info__stik info__btn"><i class='bx bx-smile' ></i></button>
+                      <form action="POST">
+                        <input class="info__input" type="text" placeholder="Add a comment...">
+                        <button class="info__com-submit" type="submit">Post</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </template>
         </div>
       </div>
     </section>

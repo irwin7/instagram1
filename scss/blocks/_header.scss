@@ -5,6 +5,8 @@
     left: 0;
     right: 0;
     min-width: 100vw;
+    z-index: 999;
+    background-color: #fff;
 }
 .site-header {
     @include dflex;

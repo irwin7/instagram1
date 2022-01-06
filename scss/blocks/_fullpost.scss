@@ -1,0 +1,225 @@
+.posts {
+
+    &__modal {
+    }
+}
+.fullpost {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    @include dflex;
+    display: none;
+
+    &__exit{
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        @include btnDef;
+        color: #fff;
+        font-size: 36px;
+    }
+
+    &__inner{
+        max-width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    &__content {
+        width: 50%;
+        background-color: #000;
+        min-height: calc(100vh - 100px);
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+    }
+
+    &__box {
+        width: 50%;
+        min-height: calc(100vh - 100px);
+        background-color: #fff;
+    }
+}
+.info {
+
+    &__header {
+        @include dflex;
+        padding: 16px;
+        border-bottom: 0.5px solid #dfdfdf;
+    }
+
+    &__header-left {
+        @include dflex;
+    }
+
+    &__link {
+        @include dflex;
+    }
+
+    &__ava {
+        @include ava;
+    }
+
+    &__user {
+        @include normalText;
+        
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &__is-followed {
+        position: relative;
+        @include btnDef;
+        @include normalText;
+
+
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 100%;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -10px;
+        }
+    }
+
+    &__header-right {
+    }
+
+    &__menu-btn {
+        @include btnDef;
+        font-size: 24px;
+    }
+
+    &__hero {
+    }
+
+    &__comments {
+    }
+
+    &__btns {
+        padding: 16px;
+        @include dflex;
+        padding-bottom: 8px;
+    }
+
+    &__main-btns {
+    }
+
+    &__btn {
+        @include btnDef;
+        font-size: 28px;
+        padding-right: 8px;
+    }
+
+    &__about {
+        padding: 16px;
+        padding-top: 0;
+    }
+
+    &__likes {
+        @include normalText;
+        color: #000;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+
+    &__likes-count {
+    }
+
+    &__time {
+        color: #8e8e8e;
+        font-size: 10px;
+    }
+
+    &__com{
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        width: 100%;
+    }
+
+    &__stik{
+        height: 28px;
+    }
+
+    &__input{
+        display: inline-block;
+        width: 410px;
+        border: none;
+        background-color: transparent;
+        padding: 8px 0;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    &__com-submit{
+        @include btnDef;
+        @include normalText;
+        margin: 0;
+        color: #0095f6;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+}
+.comms {
+    padding: 16px;
+    height: 281px;
+    overflow-y: scroll;
+    border-bottom: 0.5px solid #dfdfdf;
+
+    &__author {
+        @include dflex;
+        justify-content: start;
+    }
+
+    &__author-ava {
+        @include ava;  
+    }
+
+    &__author-usern {
+        @include dflex;
+        @include normalText;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &__author-comment {
+    }
+}
+.btn-like {
+    // <i class='bx bxs-heart' ></i>
+}
+.bxs-heart--active{
+    color: red;
+}
+.btn-comment {
+}
+.btn-share {
+}
+.btn-save {
+}
+
+.post--active{
+    display: flex;
+}
